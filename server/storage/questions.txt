@@ -1,0 +1,62 @@
+JS Questions and Answers:
+
+What is the output of console.log(typeof null)?
+
+a) object (Correct)
+b) null
+c) undefined
+d) function
+Which method is used to add one or more elements to the end of an array in JavaScript?
+
+a) push (Correct)
+b) pop
+c) shift
+d) unshift
+How do you create a new object in JavaScript?
+
+a) let obj = {}; (Correct)
+b) let obj = Object.create();
+c) let obj = new Object[];
+d) let obj = new[];
+Which of the following is not a primitive data type in JavaScript?
+
+a) boolean
+b) number
+c) array (Correct)
+d) string
+How can you convert a string to a number in JavaScript?
+
+a) Number("123") (Correct)
+b) Parse.Int("123")
+c) parseString("123")
+d) String.toNumber("123")
+What is the output of console.log("5" + 2)?
+
+a) 52 (Correct)
+b) 7
+c) NaN
+d) undefined
+Which keyword is used to declare a variable that cannot be reassigned?
+
+a) const (Correct)
+b) let
+c) var
+d) static
+What will the following code return: Boolean('false')?
+
+a) true (Correct)
+b) false
+c) null
+d) undefined
+Which of the following is the correct way to write an arrow function in JavaScript?
+
+a) const add = (a, b) => a + b; (Correct)
+b) const add = (a, b) => { return a + b }
+c) const add = (a, b) -> a + b;
+d) const add = (a, b) -> { return a + b }
+How do you check if a variable x is an array in JavaScript?
+
+a) Array.isArray(x) (Correct)
+b) x.isArray()
+c) x instanceof Array
+d) typeof x === 'array'
