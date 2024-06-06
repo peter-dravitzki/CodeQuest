@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import AnswerButton from './AnswerButton'
 import { getQuestions } from '../apis/dummydata'
 
@@ -15,24 +14,30 @@ function shuffleArray<T>(array: T[]) {
 const answers = getQuestions()
 
 export function Answers() {
-  // const [color, setColor] = useState('#E8E8E8')
-  const [answer, setAnswer] = useState(false)
-  const dummyanswers = answers.map((el) => {
-    return el.correctAnswer
+  const correct_answer = dummyData.map((el) => {
+    return el.correctAnswer.answer
   })
-  // console.log(dummyanswers)
-  const arraya = dummyanswers.map((el) => {
+
+  const first = correct_answer[1]
+
+  const false_Answers = dummyData.map((el) => {
+    return el.falseAnswers
+  })
+
+  const second = false_Answers[1]
+  const arrayFalse = second.map((el) => {
     return el.answer
   })
-  // console.log(arraya)
+  const array = [...arrayFalse, first]
+  console.log(array)
 
-  const shuffledArray = shuffleArray([...arraya])
+  const shuffledArray = shuffleArray([...array])
 
   return (
     <>
       <div>
         {shuffledArray.map((el, index) => {
-          return <AnswerButton answer={answer} element={el} key={index} />
+          return <AnswerButton answer={el === first} element={el} key={index} />
         })}
       </div>
     </>
