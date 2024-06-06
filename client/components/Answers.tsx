@@ -14,13 +14,13 @@ function shuffleArray<T>(array: T[]) {
 const answers = getQuestions()
 
 export function Answers() {
-  const correct_answer = dummyData.map((el) => {
+  const correct_answer = answers.map((el) => {
     return el.correctAnswer.answer
   })
 
   const first = correct_answer[1]
 
-  const false_Answers = dummyData.map((el) => {
+  const false_Answers = answers.map((el) => {
     return el.falseAnswers
   })
 

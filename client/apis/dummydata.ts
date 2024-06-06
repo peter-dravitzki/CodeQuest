@@ -1,6 +1,5 @@
 import { Question } from '../../models/questions'
 
-<<<<<<< HEAD
 // const rootUrl = '/api/v1'
 
 export function getQuestions() {
@@ -44,4 +43,3 @@ export function getQuestions() {
   ]
   return dummyData
 }
-

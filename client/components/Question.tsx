@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { getQuestions } from '../apis/dummydata'
 
 const questions = getQuestions()
