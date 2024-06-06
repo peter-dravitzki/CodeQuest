@@ -14,23 +14,42 @@ function shuffleArray<T>(array: T[]) {
 
 export function Answers() {
   // const [color, setColor] = useState('#E8E8E8')
-  const [answer, setAnswer] = useState(false)
-  const dummyanswers = dummyData.map((el) => {
-    return el.correctAnswer
+  // const [answer, setAnswer] = useState(false)
+  // const dummyanswers = dummyData.map((el) => {
+  //   return el.correctAnswer
+  // })
+  // console.log(dummyanswers)
+  // const arraya = dummyanswers.map((el) => {
+  //   return el.answer
+  // })
+  // console.log(arraya)
+
+  const correct_answer = dummyData.map((el) => {
+    return el.correctAnswer.answer
   })
-  console.log(dummyanswers)
-  const arraya = dummyanswers.map((el) => {
+
+  const first = correct_answer[1]
+  // console.log(first)
+  // array.push(first)
+
+  const false_Answers = dummyData.map((el) => {
+    return el.falseAnswers
+  })
+
+  const second = false_Answers[1]
+  const arrayFalse = second.map((el) => {
     return el.answer
   })
-  console.log(arraya)
+  const array = [...arrayFalse, first]
+  console.log(array)
 
-  const shuffledArray = shuffleArray([...arraya])
+  const shuffledArray = shuffleArray([...array])
 
   return (
     <>
       <div>
         {shuffledArray.map((el, index) => {
-          return <AnswerButton answer={answer} element={el} key={index} />
+          return <AnswerButton answer={el === first} element={el} key={index} />
         })}
       </div>
     </>

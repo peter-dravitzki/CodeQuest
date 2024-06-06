@@ -1,27 +1,30 @@
 import { useState } from 'react'
 
-interface Answer {
+interface Options {
   element: string
   answer: boolean
 }
 
-export default function AnswerButton(props: Answer) {
+export default function AnswerButton(props: Options) {
   const el = props.element
-  // const answer = props.answer
-  const [answer, setAnswer] = useState(false)
+  const answer = props.answer
+  const [selected, setSelected] = useState(false)
 
-  function handleClick(el) {
-    if (el === 'Fatima') {
-      setAnswer(true)
-      // setColor('#1CAC78')
-      console.log('GREEN')
+  function handleClick() {
+    if (answer) {
+      setSelected(true)
+      // style={{ background: answer ? '#1CAC78' : '#A9A9A9' }}
+      console.log('Correct Answer Selected')
+    } else {
+      setSelected(false)
+      console.log('Incorrect Answer Selected')
     }
   }
 
   return (
     <button
-      style={{ background: answer ? '#1CAC78' : '#A9A9A9' }}
-      onClick={() => handleClick(el)}
+      style={{ background: selected && answer ? '#1CAC78' : '#A9A9A9' }}
+      onClick={handleClick}
     >
       {el}
     </button>
