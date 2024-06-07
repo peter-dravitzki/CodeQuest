@@ -16,14 +16,22 @@ export default function QuestionSection({ questions }: Props) {
 
   return (
     <>
-      <div>Question:</div>
-      <div>{questionObj.question}</div>
-      <button onClick={handleNextQuestion}>Next Question</button>
-      <Answers
-        answer={questionObj}
-        setCurrentQuestion={setCurrentQuestion}
-        handle={undefined}
-      />
+      <div className="container-question">
+        <div className="question-box">{questionObj.question}</div>
+      </div>
+      <div>
+        <div className="container-question-button">
+          <button className="next-q-button" onClick={handleNextQuestion}>
+            Next Question
+          </button>
+        </div>
+
+        <Answers
+          answer={questionObj}
+          setCurrentQuestion={setCurrentQuestion}
+          handle={undefined}
+        />
+      </div>
     </>
   )
 }

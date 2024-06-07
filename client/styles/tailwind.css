@@ -4,7 +4,7 @@
 
 body {
   background-image: url("/home/eda/workspace/team-scooter/CodeQuest/client/images/background-image.jpeg");
-  background-repeat: repeat-x;
+  background-repeat: repeat-x repeat-y;
 }
 
 .container-question {
