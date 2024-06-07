@@ -8,7 +8,9 @@ export interface Question {
   id: number
   question: string
   correctAnswer: CorrectAnswer
-  falseAnswers: FalseAnswer
+  answer1: string
+  answer2: string
+  answer3: string
 }
 
 // Interface for FalseAnswer
@@ -17,5 +19,5 @@ export interface FalseAnswer {
   answer1: string
   answer2: string
   answer3: string
-  question_id: number
+  question: Question
 }

@@ -1,5 +1,12 @@
 import AnswerButton from './AnswerButton'
-import { getQuestions } from '../apis/dummydata'
+import { getQuestions } from '../apis/apiClient'
+import { Question } from '../../models/questions'
+
+interface Props {
+  answer: Question
+  setCurrentQuestion: (num) => void
+  handle
+}
 
 function shuffleArray<T>(array: T[]) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -11,14 +18,15 @@ function shuffleArray<T>(array: T[]) {
   return array
 }
 
-const answers = getQuestions()
+// const answers = getQuestions()
 
-export function Answers() {
-  const correct_answer = answers.map((el) => {
-    return el.correctAnswer.answer
-  })
+export function Answers({ answer }: Props) {
+  const correct_answer = answer['correct_answer']
+  // IGNORE THIS ERROR ^
 
-  const first = correct_answer[0]
+  const first = correct_answer
+  console.log('Correct:', correct_answer)
+  // console.log('answers:', answers)
 
   // const false_Answers = answers.map((el) => {
   //   return el.falseAnswers
@@ -29,21 +37,9 @@ export function Answers() {
   //   return el.answer
   // })
 
-  const false_answer1 = answers.map((el) => {
-    return el.falseAnswers.answer1
-  })
-  const false_answer2 = answers.map((el) => {
-    return el.falseAnswers.answer2
-  })
-  const false_answer3 = answers.map((el) => {
-    return el.falseAnswers.answer3
-  })
-  const second = [false_answer1[0], false_answer2[0], false_answer3[0]]
-
-  console.log(second)
+  const second = [answer.answer1, answer.answer2, answer.answer3]
 
   const array = [...second, first]
-  console.log(array)
 
   const shuffledArray = shuffleArray([...array])
 
