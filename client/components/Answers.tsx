@@ -18,17 +18,31 @@ export function Answers() {
     return el.correctAnswer.answer
   })
 
-  const first = correct_answer[1]
+  const first = correct_answer[0]
 
-  const false_Answers = answers.map((el) => {
-    return el.falseAnswers
-  })
+  // const false_Answers = answers.map((el) => {
+  //   return el.falseAnswers
+  // })
 
-  const second = false_Answers[1]
-  const arrayFalse = second.map((el) => {
-    return el.answer
+  // const second = false_Answers[1]
+  // const arrayFalse = second.map((el) => {
+  //   return el.answer
+  // })
+
+  const false_answer1 = answers.map((el) => {
+    return el.falseAnswers.answer1
   })
-  const array = [...arrayFalse, first]
+  const false_answer2 = answers.map((el) => {
+    return el.falseAnswers.answer2
+  })
+  const false_answer3 = answers.map((el) => {
+    return el.falseAnswers.answer3
+  })
+  const second = [false_answer1[0], false_answer2[0], false_answer3[0]]
+
+  console.log(second)
+
+  const array = [...second, first]
   console.log(array)
 
   const shuffledArray = shuffleArray([...array])

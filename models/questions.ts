@@ -9,12 +9,14 @@ export interface Question {
   question: string
   correctAnswerId: number
   correctAnswer: CorrectAnswer
-  falseAnswers: FalseAnswer[]
+  falseAnswers: FalseAnswer
 }
 
 // Interface for FalseAnswer
 export interface FalseAnswer {
   id: number
-  answer: string
-  questionId: number
+  answer1: string
+  answer2: string
+  answer3: string
+  question_id: number
 }
