@@ -25,11 +25,17 @@ export default function Question() {
   }
 
   return (
-    <div>
-      <div key={questions[currentQuestionIndex].id}>
-        {questions[currentQuestionIndex].question}
+    <>
+      <div className="container-question">
+        <div className="question-box" key={questions[currentQuestionIndex].id}>
+          {questions[currentQuestionIndex].question}
+        </div>
       </div>
-      <button onClick={handleNextQuestion}>Next Question</button>
-    </div>
+      <div className="container-question-button">
+        <button className="next-q-button" onClick={handleNextQuestion}>
+          Next Question
+        </button>
+      </div>
+    </>
   )
 }

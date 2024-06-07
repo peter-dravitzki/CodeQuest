@@ -49,10 +49,14 @@ export function Answers() {
 
   return (
     <>
-      <div>
-        {shuffledArray.map((el, index) => {
-          return <AnswerButton answer={el === first} element={el} key={index} />
-        })}
+      <div className="button-container">
+        <div className="button">
+          {shuffledArray.map((el, index) => {
+            return (
+              <AnswerButton answer={el === first} element={el} key={index} />
+            )
+          })}
+        </div>
       </div>
     </>
   )

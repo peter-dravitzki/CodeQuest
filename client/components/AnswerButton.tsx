@@ -22,11 +22,14 @@ export default function AnswerButton(props: Options) {
   }
 
   return (
-    <button
-      style={{ background: selected && answer ? '#1CAC78' : '#A9A9A9' }}
-      onClick={handleClick}
-    >
-      {el}
-    </button>
+    <div className="buttons-container">
+      <button
+        className="buttons"
+        style={{ background: selected && answer ? '#1CAC78' : '#A9A9A9' }}
+        onClick={handleClick}
+      >
+        {el}
+      </button>
+    </div>
   )
 }

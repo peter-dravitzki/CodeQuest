@@ -1,4 +1,5 @@
 import { Answers } from './Answers.tsx'
+import Header from './Header.tsx'
 import Question from './Question.tsx'
 
 function App() {
@@ -6,12 +7,10 @@ function App() {
 
   return (
     <>
-      <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <Question />
-        <Answers />
-        {/* <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul> */}
-      </div>
+      <Header />
+      <Question />
+      <Answers />
+      {/* <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul> */}
     </>
   )
 }
