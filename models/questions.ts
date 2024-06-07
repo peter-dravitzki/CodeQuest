@@ -7,15 +7,17 @@ export interface CorrectAnswer {
 export interface Question {
   id: number
   question: string
-  correctAnswerId: number
-  correctAnswer?: CorrectAnswer
-  falseAnswers?: FalseAnswer[]
+  correctAnswer: CorrectAnswer
+  answer1: string
+  answer2: string
+  answer3: string
 }
 
 // Interface for FalseAnswer
 export interface FalseAnswer {
   id: number
-  answer: string
-  questionId: number
-  question?: Question
+  answer1: string
+  answer2: string
+  answer3: string
+  question: Question
 }

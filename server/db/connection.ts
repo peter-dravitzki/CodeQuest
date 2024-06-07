@@ -59,17 +59,15 @@ export async function getAllQuestions() {
 //Read by Id
 export async function getQuestionById(id: number) {
   const question: Question = await connection('questions')
-    .join('correct_answer', 'correct_answer.id', 'correct_answer_id')
-    .join('false_answers', 'false_answers.id', 'questions.correct_answer_id')
+    .join('false_answers', 'false_answers.id', 'questions.id')
     .where('questions.id', id)
     .select(
       'questions.id',
-      'question',
-      'correct_answer_id as correctAnswerId',
-      'correct_answer.answer as correctAnswer',
-      'false_answers.answer1 as falseAnswer1',
-      'false_answers.answer2 as falseAnswer2',
-      'false_answers.answer3 as falseAnswer3',
+      'questions.question',
+      'questions.correct_answer as correctAnswer',
+      'false_answers.answer1 as answer1',
+      'false_answers.answer2 as answer2',
+      'false_answers.answer3 as answer3',
     )
   //console.log(question)
 

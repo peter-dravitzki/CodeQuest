@@ -2,7 +2,10 @@ export async function up(knex) {
   return knex.schema.createTable('questions', (table) => {
     table.increments('id')
     table.string('question')
-    table.integer('correct_answer_id')
+    table.string('correct_answer')
+    table.string('answer1')
+    table.string('answer2')
+    table.string('answer3')
   })
 }
 

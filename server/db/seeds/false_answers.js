@@ -1,36 +1,19 @@
+import * as fs from 'node:fs/promises'
+
 export async function seed(knex) {
+  const questions = JSON.parse(
+    await fs.readFile('../storage/questions.json', 'utf8'),
+  )
   // Deletes ALL existing entries
   await knex('false_answers').del()
 
   // Inserts seed entries
-  await knex('false_answers').insert([
-    {
-      id: 1,
-      answer1: 'banaasdna',
-      answer2: 'banana',
-      answer3: 'banana',
-      question_id: 1,
-    },
-    {
-      id: 2,
-      answer1: 'banasada',
-      answer2: 'banana',
-      answer3: 'banaasdna',
-      question_id: 1,
-    },
-    {
-      id: 3,
-      answer1: 'banana',
-      answer2: 'baasdnana',
-      answer3: 'banana',
-      question_id: 1,
-    },
-    {
-      id: 4,
-      answer1: 'banasdna',
-      answer2: 'banana',
-      answer3: 'banana',
-      question_id: 1,
-    },
-  ])
+  for (let el of questions.questions) {
+    await knex('false_answers').insert({
+      question: el.question,
+      answer1: el.answer1,
+      answer2: el.answer2,
+      answer3: el.answer3,
+    })
+  }
 }
