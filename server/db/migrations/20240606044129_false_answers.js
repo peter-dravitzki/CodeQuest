@@ -4,7 +4,7 @@ export async function up(knex) {
     table.string('answer1')
     table.string('answer2')
     table.string('answer3')
-    table.integer('question_id')
+    table.string('question')
   })
 }
 
