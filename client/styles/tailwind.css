@@ -65,13 +65,13 @@ next-q-button:hover {
 
 .buttons {
   padding: 15px 25px; /* Adjust padding as needed */
-  background-color: #007bff; /* Change background color */
-  color: #fff; /* Change text color */
+  background-color: black; /* Change background color */
+  color: #000; /* Change text color */
   border: none;
   text-size: 25px;
+  font-size: 30px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   margin: 1px
 }
 

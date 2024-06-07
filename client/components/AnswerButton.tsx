@@ -25,7 +25,7 @@ export default function AnswerButton(props: Options) {
     <div className="buttons-container">
       <button
         className="buttons"
-        style={{ background: selected && answer ? '#1CAC78' : '#A9A9A9' }}
+        style={{ background: selected && answer ? '#1CAC78' : '#8FCED5' }}
         onClick={handleClick}
       >
         {el}
