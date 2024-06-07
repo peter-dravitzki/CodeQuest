@@ -1,6 +1,7 @@
 import AnswerButton from './AnswerButton'
 import { getQuestions } from '../apis/apiClient'
 import { Question } from '../../models/questions'
+import { useState, useEffect } from 'react'
 
 interface Props {
   answer: Question
@@ -42,6 +43,10 @@ export function Answers({ answer }: Props) {
   const array = [...second, first]
 
   const shuffledArray = shuffleArray([...array])
+  const [currentQuestion, setCurrentQuestionState] = useState(0)
+  useEffect(() => {
+    setCurrentQuestionState(currentQuestion + 1)
+  }, [answer])
 
   return (
     <>
@@ -49,7 +54,11 @@ export function Answers({ answer }: Props) {
         <div className="button">
           {shuffledArray.map((el, index) => {
             return (
-              <AnswerButton answer={el === first} element={el} key={index} />
+              <AnswerButton
+                answer={el === first}
+                element={el}
+                key={`${currentQuestion}-${index}`}
+              /> // Unique key for each question />
             )
           })}
         </div>
